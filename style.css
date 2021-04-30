@@ -18,3 +18,34 @@ canvas {
     font-family: 'Roboto Mono', monospace;
     color:rgb(25, 64, 114);
 }
+
+#main-container {
+    font-size: 50px;
+    text-align: center;
+}
+
+.commands {
+    transition: 0.20s;
+    margin-top: 25px;
+    background-color: white;
+    border: none;
+    font-size: 50px;
+    color:rgb(36, 87, 196);
+}
+
+#playback {
+    margin-right: 35px;
+}
+
+.commands:focus {
+    outline: none;
+}
+
+.commands:hover {
+    transition: 0.20s;
+    font-size: 57.5px;
+}
+
+#controls {
+    height: 85px;
+}
