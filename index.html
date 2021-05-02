@@ -8,30 +8,59 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    
+    <p id="title">Canvas Animation Sample</p>
 
     <div id="main-container">
 
-        <p id="title">Canvas Animation Sample</p>
-
-        <canvas width="500" height="500"></canvas>
-
-        <div id="customization">
-
+        <div id="canvas-main">
+            
             <div id="controls">
 
-                <button id="playback" class="commands">
+                <button id="playback" class="commands no-outline">
                     <i class="fas fa-play"></i>  
                 </button>
 
-                <button id="reset" class="commands">
+                <button id="reset" class="commands no-outline">
                     <i class="fas fa-undo-alt"></i>
                 </button>
 
             </div>
+            <canvas width="500" height="500"></canvas>
+
+        </div>
+
+        
+
+        <div id="customization">
+
+            <div id="shape-select">
+
+                <p class="option-name">Shape</p>
+
+                <select id="shape" class="option no-outline">
+
+                    <option value="square">Square</option>
+                    <option value="circle">Circle</option>
+
+                </select>
+
+            </div>
+
+            
+
+            <button id="apply" class="apply no-outline">
+
+                <i class="fas fa-check"></i>
+
+            </button>
 
         </div>
 

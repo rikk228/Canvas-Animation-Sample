@@ -4,10 +4,7 @@
 }
 
 canvas {
-    margin-top:  50px;
     background-color: coral;
-    margin-right: auto;
-    margin-left: auto;
     display: block;
 }
 
@@ -20,25 +17,25 @@ canvas {
 }
 
 #main-container {
-    font-size: 50px;
+    margin-top: 25px;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;  
 }
 
-.commands {
+.commands, .apply {
     transition: 0.20s;
-    margin-top: 25px;
     background-color: white;
     border: none;
     font-size: 50px;
     color:rgb(36, 87, 196);
 }
 
-#playback {
-    margin-right: 35px;
-}
-
-.commands:focus {
-    outline: none;
+.apply {
+    font-size: 35px;
+    color:rgb(19, 126, 54);
 }
 
 .commands:hover {
@@ -46,6 +43,44 @@ canvas {
     font-size: 57.5px;
 }
 
+.apply:hover { 
+    transition: 0.20s;
+    font-size: 40px;
+}
+
 #controls {
-    height: 85px;
+    text-align: center;
+    display: block;
+    flex:unset;
+    height: 65px;
+    margin-bottom: 15px;
+}
+
+#playback {
+    margin-right: 50px;
+}
+
+#canvas-main{
+    margin-right: 50px;
+}
+
+.option-name {
+    font-size: 30px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.option {
+    border: none;
+    margin-top: 10px;
+    font-size: 17.5px;
+    font-family: 'Open Sans', sans-serif;
+    outline: none;
+}
+
+.no-outline:focus {
+    outline: none;
+}
+
+.apply {
+    margin-top: 200px;
 }
