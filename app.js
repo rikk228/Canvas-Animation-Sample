@@ -80,8 +80,8 @@ function clearCanvas() {
 function moveSquare() {
     clearCanvas();
     drawSquare(coords.x, coords.y, width, height);
-    coords.x += speed.x / fps;
-    coords.y += speed.y / fps;
+    coords.x += speed.x;
+    coords.y += speed.y;
     if(coords.x + width > canvas.width) speed.x = -speed.x;
     else if(coords.x < 0) speed.x = -speed.x;
     if(coords.y + height > canvas.height) speed.y = -speed.y;
@@ -91,8 +91,8 @@ function moveSquare() {
 function moveCircle() {
     clearCanvas()
     drawCircle(coords.circle.x, coords.circle.y, radius);
-    coords.circle.x += speed.x/ fps;
-    coords.circle.y += speed.y / fps;
+    coords.circle.x += speed.x;
+    coords.circle.y += speed.y;
     if(coords.circle.x + radius > canvas.width) speed.x = -speed.x;
     else if(coords.circle.x - radius < 0) speed.x = -speed.x;
     if(coords.circle.y + radius > canvas.height) speed.y = -speed.y;
