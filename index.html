@@ -20,45 +20,81 @@
 
     <div id="main-container">
 
-        <div id="canvas-main">
-            
-            <div id="controls">
+        <!--
+        dev stuff
 
-                <button id="playback" class="commands no-outline">
-                    <i class="fas fa-play"></i>  
-                </button>
-
-                <button id="reset" class="commands no-outline">
-                    <i class="fas fa-undo-alt"></i>
-                </button>
-
-            </div>
-            <canvas width="500" height="500"></canvas>
+        <div id="menu" style="background-color: black; float: left; height: 500px; width:500px;">
 
         </div>
-
         
- 
-        <div id="customization">
+        -->
 
-            <div id="shape-select">
+        <div id="canvas-cs-container">
 
-                <p class="option-name">Shape</p>
+            <div id="canvas-main">
+                
+                <div id="controls">
 
-                <select id="shape" class="option no-outline">
+                    <button id="playback" class="commands no-outline">
+                        <i class="fas fa-play"></i>  
+                    </button>
 
-                    <option value="square">Square</option>
-                    <option value="circle">Circle</option>
+                    <button id="reset" class="commands no-outline">
+                        <i class="fas fa-undo-alt"></i>
+                    </button>
 
-                </select>
+                </div>
+
+                <canvas width="500" height="500"></canvas>
 
             </div>
 
-            <button id="apply" class="apply no-outline">
+            
+    
+            <div id="customization">
 
-                <i class="fas fa-check"></i>
+                <div id="shape-select">
 
-            </button>
+                    <p class="option-name">Shape</p>
+
+                    <select id="shape" class="option no-outline">
+
+                        <option value="square">Square</option>
+                        <option value="circle">Circle</option>
+
+                    </select>
+
+                </div>
+
+                <div id="w-h-r-select">
+
+                    <div id="width-select" class="">
+                        <p class="option-name">Width</p>
+                        <input class="no-border custom-input-number" type="number" id="width" value="50">
+                    </div>
+
+                    <div id="height-select" class="whr">
+                        <p class="option-name">Height</p>
+                        <input class="no-border custom-input-number" type="number" id="height" value="50">
+                    </div>
+
+                    <div id="radius-select" class="whr">
+                        <p class="option-name">Radius</p>
+                        <input class="no-border custom-input-number" type="number" id="radius" value="25">
+                    </div>
+                    
+
+                </div>
+                
+                <div class="br"></div>
+
+                <button id="apply" class="apply no-outline">
+
+                    <i class="fas fa-check"></i>
+
+                </button>
+
+            </div>
 
         </div>
 

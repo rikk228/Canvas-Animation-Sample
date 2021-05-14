@@ -9,6 +9,10 @@ resetBTN.addEventListener('click', reset)
 const customPropertyBTN = document.querySelector('#apply');
 customPropertyBTN.addEventListener('click', customProperty);
 
+const customWidthINP = document.querySelector('#width');
+const customHeightINP = document.querySelector('#height');
+const customRadiusINP = document.querySelector('#radius');
+
 const shapeINP = document.querySelector('#shape');
 
 let shape = 'square';
@@ -31,6 +35,11 @@ const fps = 60;
 const ms = 1000;
 const refreshRate = ms/fps;
 
+let perf = {
+    circle: 0,
+    square: 0
+}
+
 function assignBaseCoord() {
 
     const baseCoords = {
@@ -44,7 +53,7 @@ function assignBaseCoord() {
     
     coords = baseCoords;
     
-}
+} 
 
 function assignBaseSpeed() {
     const baseSpeed = {
@@ -78,25 +87,29 @@ function clearCanvas() {
 }
 
 function moveSquare() {
+
     clearCanvas();
     drawSquare(coords.x, coords.y, width, height);
     coords.x += speed.x;
     coords.y += speed.y;
-    if(coords.x + width > canvas.width) speed.x = -speed.x;
-    else if(coords.x < 0) speed.x = -speed.x;
-    if(coords.y + height > canvas.height) speed.y = -speed.y;
-    else if(coords.y < 0) speed.y = -speed.y;
+    if(coords.x + width > canvas.width) invertXSpeed();
+    else if(coords.x < 0) invertXSpeed();
+    if(coords.y + height > canvas.height) invertYSpeed();
+    else if(coords.y < 0) invertYSpeed();
 }
 
 function moveCircle() {
+
     clearCanvas()
     drawCircle(coords.circle.x, coords.circle.y, radius);
     coords.circle.x += speed.x;
     coords.circle.y += speed.y;
-    if(coords.circle.x + radius > canvas.width) speed.x = -speed.x;
-    else if(coords.circle.x - radius < 0) speed.x = -speed.x;
-    if(coords.circle.y + radius > canvas.height) speed.y = -speed.y;
-    else if(coords.circle.y - radius < 0) speed.y = -speed.y;
+
+    if(coords.circle.x + radius > canvas.width) invertXSpeed();
+    else if(coords.circle.x - radius < 0) invertXSpeed();
+    if(coords.circle.y + radius > canvas.height) invertYSpeed();
+    else if(coords.circle.y - radius < 0) invertYSpeed();
+
 }
 
 function move(evt) {
@@ -138,11 +151,40 @@ function reset(evt, customShape, customSpeed, customCoords) {
 
 function customProperty(evt) {
     shape = shapeSelection();
+    width = customWidth();
+    height = customHeight();
+    radius = customRadius(); 
     reset(null, shape);
 }
 
 function shapeSelection() {
     return shapeINP.value;
+}
+
+function customWidth() {
+    let width = parseInt(customWidthINP.value);
+    if(width <= 500 && width > 0) return width;
+    return 50;
+}
+
+function customHeight() {
+    let height = parseInt(customHeightINP.value);
+    if(height <= 500) return height;
+    return 50;
+}
+
+function customRadius() {
+    let radius = parseInt(customRadiusINP.value);
+    if (radius <= 250) return radius;
+    return 25;
+}
+
+
+function invertXSpeed() {
+    speed.x = -speed.x;
+}
+function invertYSpeed() {
+    speed.y = -speed.y;
 }
 
 window.onload = load;
